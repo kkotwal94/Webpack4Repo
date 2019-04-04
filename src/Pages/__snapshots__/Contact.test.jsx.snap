@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Contact updating 1`] = `
+<div>
+  Contact page #
+  0
+  <button
+    onClick={[Function]}
+  >
+    Increment +
+  </button>
+</div>
+`;

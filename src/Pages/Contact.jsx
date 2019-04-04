@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from 'react';
 
 const Contact = () => {
   const [number, setNumber] = useState(0);

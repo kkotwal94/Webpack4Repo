@@ -1,8 +1,9 @@
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Switch, NavLink as Link, Route } from "react-router-dom";
-const Contact = lazy(() => import("./Pages/Contact"));
-const Home = lazy(() => import("./Pages/Home"));
-const About = lazy(() => import("./Pages/About"));
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter, Switch, NavLink as Link, Route } from 'react-router-dom';
+
+const Contact = lazy(() => import('./Pages/Contact'));
+const Home = lazy(() => import('./Pages/Home'));
+const About = lazy(() => import('./Pages/About'));
 
 const App = () => (
   <BrowserRouter>

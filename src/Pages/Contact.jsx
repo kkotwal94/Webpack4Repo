@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 
 const Contact = () => {
   const [number, setNumber] = useState(0);
@@ -6,6 +6,7 @@ const Contact = () => {
     <div>
       Contact page #{number}
       <button
+        type="button"
         onClick={() => {
           setNumber(number + 1);
         }}

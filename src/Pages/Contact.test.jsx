@@ -1,6 +1,6 @@
 import React from 'react';
-import Contact from './Contact';
 import renderer from 'react-test-renderer';
+import Contact from './Contact';
 
 test('Testing Contact updating', () => {
   const component = renderer.create(<Contact />);

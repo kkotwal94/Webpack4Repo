@@ -11,8 +11,8 @@
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
     "prettier:format": "prettier --write **/*.{js,css,md}",
-    "lint:fix": "eslint src --fix",
-    "lint": "eslint src",
+    "lint:fix": "eslint src --ext .js,.jsx --fix",
+    "lint": "eslint src --ext .js,.jsx",
     "test": "jest",
     "start": "webpack-dev-server --hot --mode development"
   },
@@ -24,6 +24,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write **/*.{js,css,md}",
+      "eslint src --ext .js,.jsx",
       "git add"
     ]
   },
@@ -31,6 +32,7 @@
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/"
     ],
+    "testEnvironment": "jsdom",
     "moduleFileExtensions": [
       "js",
       "jsx"

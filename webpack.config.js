@@ -1,35 +1,35 @@
-const webpack = require("webpack");
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].[hash].js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[hash].js'
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        use: ["babel-loader", "eslint-loader"],
+        use: ['babel-loader', 'eslint-loader'],
         exclude: /node_modules/
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.svg$/,
-        use: "file-loader"
+        use: 'file-loader'
       },
       {
         test: /\.png$/,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
-              mimetype: "image/png"
+              mimetype: 'image/png'
             }
           }
         ]
@@ -37,32 +37,32 @@ const config = {
     ]
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: ['.js', '.jsx']
   },
   devServer: {
-    contentBase: "./dist",
+    contentBase: './dist',
     historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: require("html-webpack-template"),
+      template: require('html-webpack-template'),
       inject: false,
-      appMountId: "app"
+      appMountId: 'app'
     })
   ],
   optimization: {
-    runtimeChunk: "single",
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\\/]node_modules[\\\/]/,
-          name: "vendors",
-          chunks: "all"
+          name: 'vendors',
+          chunks: 'all'
         },
         common: {
-          name: "common",
+          name: 'common',
           minChunks: 2,
-          chunks: "all",
+          chunks: 'all',
           priority: 10,
           reuseExistingChunk: true,
           enforce: true
